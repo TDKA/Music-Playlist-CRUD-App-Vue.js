@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Signika:wght@300;400;500;600;700&display=swap');
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Signika', sans-serif; */
+
+
+/* Vars */
+:root {
+    --main-color:#AA14F0;
+    --main-background-color: linear-gradient(rgba(170, 20, 240, 0.938), rgba(219, 88, 40, 0.938));
+    --second-background-color: linear-gradient(rgba(170, 20, 240, 0.938), rgba(219, 88, 40, 0.938), rgba(238, 46, 174, 0.938));
+    --second-color: #EEEEEE;
+    --third-color: #BC8CF2;
+    --dark-color: #0e0d0d;
+}
+/* Vars */
+
+* {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;  
+    color: var(--dark-color);
+}
+body {
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* btns */
+.btn-container {
+  text-align: center;
+}
+
+.btn-main {
+    padding: 15px 27px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.btn-main:hover {
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(141, 16, 141, 0.4)) ;
+    color: #f4f4f4;
+    box-shadow: 0 3px 7px rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+
+.btn-second {
+     padding: 15px 27px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    background: linear-gradient(rgba(170, 20, 240, 0.938), rgba(219, 88, 40, 0.938));
+    color: white;
+}
+.btn-second:hover {
+   background-color: linear-gradient(rgba(170, 20, 240, 0.938), rgba(219, 88, 40, 0.938));
+    color: #f4f4f4;
+    box-shadow: 0 3px 7px rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
