@@ -3,11 +3,15 @@ import {ref, watchEffect} from 'vue'
 import { firestore } from '../firebase/config'
 
 
-const getCollection = (collection) => {
+const getCollection = (collection, query) => {
     const docs = ref(null)
     const error = ref(null)
 
     let collectionRef = firestore.collection(collection).orderBy('createdAt')
+
+    if(query) {
+        collectionRef = collectionRef.where(...query)
+    }
 
     //Set real time listener
   const unsub = collectionRef.onSnapshot((snap) => {

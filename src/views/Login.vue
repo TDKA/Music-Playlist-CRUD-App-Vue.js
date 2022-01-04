@@ -32,7 +32,7 @@ export default {
     const submitForm = async () => {
       const response = await login(email.value, password.value);
       if (!error.value) {
-        router.push({ name: "Home" });
+        router.push({ name: "MyPlaylist" });
         console.log("logged in");
       }
     };

@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { firestore } from "../firebase/config";
 
-const useDoc = (collection, id) => {
+const useDocument = (collection, id) => {
 
     let error = ref(null)
     let isLoading = ref(false)
@@ -21,9 +21,22 @@ const useDoc = (collection, id) => {
             isLoading.value = false
         }
     }
+    const updateDoc = async (updates) => {
+        isLoading.value = true
+        error.value = null
+        try {
+            const response = await docRef.update(updates)
+            isLoading.value = false
+            return response
+        }catch (err) {
+            isLoading.value = false
+            error.value = err.message
+        }
+    }
 
-    return {isLoading, error, deleteDoc}
+
+    return {isLoading, error, deleteDoc, updateDoc}
 
 }
 
-export default useDoc
+export default useDocument

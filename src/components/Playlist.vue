@@ -1,8 +1,8 @@
 <template>
-  <ul class="lists" v-for="list in docs" :key="list.id">
+  <ul class="lists" v-for="list in playlists" :key="list.id">
     <router-link :to="{ name: 'Details', params: { id: list.id } }">
       <li class="single">
-        <ul v-if="docs">
+        <ul v-if="playlists">
           <li class="listItem">
             <h4>{{ list.title }}</h4>
             <div class="playlistImg">
@@ -19,9 +19,9 @@
 import getCollection from "@/services/getCollection";
 export default {
   setup() {
-    const { docs, error } = getCollection("playlist");
+    const { docs: playlists, error } = getCollection("playlist");
 
-    return { docs, error };
+    return { playlists, error };
   },
 };
 </script>
@@ -56,7 +56,6 @@ h4 {
   max-width: 210px;
   max-height: 140px;
 }
-
 /* Animations lists */
 .lists {
   position: relative;
